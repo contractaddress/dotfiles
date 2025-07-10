@@ -1,0 +1,6 @@
+[keys.gallery]
+Ctrl+c = exec wl-copy '%' && notify-send "Copied image path" '%'
+
+[keys.viewer]
+Ctrl+c = exec wl-copy '%' && notify-send "Copied image path" '%'
+Ctrl+w = exec swww img '%' --transition-type wipe --transition-duration 1 && hellwal -i '%' --neon-mode
