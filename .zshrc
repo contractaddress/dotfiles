@@ -4,10 +4,6 @@
 export PATH=~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:$PATH
 export OPENAI_API_KEY=NICE_TRY :P
 export ANTHROPIC_API_KEY=NICE_TRY :P
-export GTK_THEME=catppuccin-frappe-maroon-standard+default
-export XCURSOR_THEME=Bibata-Modern-Classic
-export XCURSOR_SIZE=24
-
 
 
 function hex-encode()
