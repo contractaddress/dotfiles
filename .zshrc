@@ -29,6 +29,7 @@ alias ffzf='fzf --preview "nvim {}"'
 alias pvenv='python3 -m venv .venv && source .venv/bin/activate'
 alias docker_arch='sudo docker run -it --rm archlinux'
 alias spotify='spotify --ozone-platform=wayland  --ui.track_notifications_enabled=false & disown; exit'
+alias swi='swayimg'
 
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
