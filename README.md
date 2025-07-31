@@ -27,13 +27,8 @@ simple TUI to change starship presets quickly system wide. Made in Python with t
 ## Starchanger Requirements
 
 - [Starship](https://starship.rs)
-- Textual
-
-```
-pip3 install textual
-```  
-
-in a python venv inside the script directory  
+- Textual library
+- Pyinstaller (optional)
 
 ## recommendations
 
@@ -43,7 +38,7 @@ in a python venv inside the script directory
 chmod +x install.sh
 ```
 
-```
+```bash
 ./install.sh
 ```
 
@@ -51,12 +46,22 @@ find the executable ```dist/starchanger``` and add it to you PATH
 
 ### Manual Installation
 
-```
-pip3 install pyinstaller
+create and activate a python venv
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate
 ```
 
-```
-pyinstaller --onefile main.py
+install requirements
+
+```bash
+pip install -r requirements.txt 
 ```
 
-find the executable in ```dist/``` rename it  to **starchanger** and add it to your PATH
+turn the script into an executable
+
+```bash
+pyinstaller --onefile --name starchanger main.py
+```
+
+find the executable ```dist/starchanger``` and add it to you PATH
