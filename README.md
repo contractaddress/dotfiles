@@ -17,51 +17,20 @@ welcome to my Arch Hyprland dotfiles + tools made by me
 - **Image Gallery:** [swayimg](https://github.com/artemsen/swayimg)
 - **GTK:** [gruvbox-gtk-theme-git](https://aur.archlinux.org/packages/gruvbox-gtk-theme-git)
 
-## starchanger
+## My Tools
 
-simple TUI to change starship presets quickly system wide. Made in Python with the [textual](https://textual.textualize.io/) library  
-*you can find the script [here](starchanger/)*
+### Starchanger
 
-![starchanger](assets/starchangrr.gif)
-  
-## Starchanger Requirements
+a Starship preset changer with a TUI
 
-- [Starship](https://starship.rs)
-- Textual library
-- Pyinstaller (optional)
+**you can install it [here](mytools/starchanger/)**
 
-## recommendations
+![starchanger](assets/starchangrr.gif)  
 
-### Install script
+### Hellman
 
-```bash
-chmod +x install.sh
-```
+a Hellwal theme manager with a TUI
 
-```bash
-./install.sh
-```
+**you can install it [here](mytools/hellman/)**
 
-find the executable ```dist/starchanger``` and add it to you PATH
-
-### Manual Installation
-
-create and activate a python venv
-
-```bash
-python3 -m venv .venv && source .venv/bin/activate
-```
-
-install requirements
-
-```bash
-pip install -r requirements.txt 
-```
-
-turn the script into an executable
-
-```bash
-pyinstaller --onefile --name starchanger main.py
-```
-
-find the executable ```dist/starchanger``` and add it to you PATH
+![hellman](assets/hellman.gif)
