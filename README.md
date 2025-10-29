@@ -23,14 +23,23 @@ welcome to my Arch Hyprland dotfiles + tools made by me
 
 a Starship preset changer with a TUI
 
-**you can install it [here](mytools/starchanger/)**
+**you can check it out [here](mytools/starchanger/)**
 
 ![starchanger](assets/starchangrr.gif)  
 
 ### Hellman
 
-a Hellwal theme manager with a TUI
+a Hellwal theme picker with a TUI
 
-**you can install it [here](mytools/hellman/)**
+**you can check it out [here](mytools/hellman/)**
 
 ![hellman](assets/hellman.gif)
+
+### KittyThemes
+
+A Kitty theme picker with a TUI.  
+Great for simple theme management in Kitty when not using hellwal/pywall.
+
+**you can check it out [here](/mytools/kittythemes/)**
+
+![kittythemes](assets/kittythemes.gif)

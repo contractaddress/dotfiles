@@ -1,4 +1,6 @@
-## Starchanger Requirements
+# Starchanger
+
+## Requirements
 
 - [Starship](https://starship.rs)
 - Textual library
