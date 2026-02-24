@@ -1,0 +1,15 @@
+#!/bin/bash
+
+FOLDER="$HOME/.config/hellwal/themes/"
+
+while true; do
+  choice=$(printf '%s\n' "$FOLDER"/* | while read -r f; do
+    echo "${f##*/}"
+  done | sort | wofi -d -i -p "Choose a Hellwal theme")
+
+  # Exit if user presses Esc or closes wofi
+  [ -z "$choice" ] && break
+
+  # Apply the chosen theme
+  hellwal -t "$FOLDER/$choice"
+done

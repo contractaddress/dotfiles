@@ -1,0 +1,8 @@
+#!/bin/bash
+
+FILE="$HOME/notes/nvimcmdclippy.md"
+
+choice=$(cat "$FILE" | wofi -d -i -p "choose a cmd")
+
+# Copy the chosen command to clipboard
+echo "$choice" | wl-copy

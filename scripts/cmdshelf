@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+TERMINAL='/usr/bin/foot'
+FOOTFLAGS=(
+  -e
+  --title FloatingFoot
+)
+
+#make sure to add the path if your list contains local binaries/scripts if executing via hyprland keybind
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:~/.local/bin:
+
+file="$HOME/.config/cmdshelf.list"
+[ -f "$file" ] || exit 1
+
+chosen=$(wofi --dmenu <"$file")
+[ -z "$chosen" ] && exit 0
+
+if [[ "$chosen" == *"swayimg"* ]]; then
+  zsh -c "$chosen"
+else
+  setsid -f "$TERMINAL" "${FOOTFLAGS[@]}" zsh -l -c "$chosen; exec zsh"
+fi

@@ -4,26 +4,6 @@
 - Textual library
 - Pyinstaller (optional)
 
-## Install script
-
-**change directories**
-
-```bash
-cd dotfiles/mytools/hellman
-```
-
-**make the script executable and run it**
-
-```bash
-chmod +x install.sh
-```
-
-```bash
-./install.sh
-```
-
-find the executable ```dist/hellman``` and add it to you PATH
-
 ## Manual Installation
 
 **change directories**
@@ -50,4 +30,16 @@ pip install -r requirements.txt
 pyinstaller --onefile --name hellman hellman.py
 ```
 
-find the executable ```dist/hellman``` and add it to you PATH
+```bash
+chmod +x dist/hellman
+```
+
+find the executable ```dist/hellman``` and add it to $PATH
+
+## Quality of life
+
+add this variable to your shell config
+
+```bash
+alias hellman="$TERM -e hellman"
+```

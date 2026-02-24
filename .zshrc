@@ -1,25 +1,17 @@
+# Greeting
+
 # Prompt
 #PROMPT="%F{red}┌[%f%F{cyan}%m%f%F{red}]─[%f%F{yellow}%D{%H:%M-%d/%m}%f%F{red}]─[%f%F{magenta}%d%f%F{red}]%f"$'\n'"%F{red}└╼%f%F{green}$USER%f%F{yellow}$%f"
 # Export PATH$
-export PATH=~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:$PATH
-export OPENAI_API_KEY=NICE_TRY :P
-export ANTHROPIC_API_KEY=NICE_TRY :P
+export PATH=~/.local/bin:~/.local/scripts/:snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:~/.bun/bin:~/.local/bin/:$PATH
+export OPENAI_API_KEY=bleh
+export ANTHROPIC_API_KEY=bleh
+export MISTRAL_API_KEY=bleh
+export GITHUBTOKEN=forgor
+export DISCWEBHK=forkepri
+export TGtoken=forkepri
+export ChatID=forkepri
 
-
-function hex-encode()
-{
-  echo "$@" | xxd -p
-}
-
-function hex-decode()
-{
-  echo "$@" | xxd -p -r
-}
-
-function rot13()
-{
-  echo "$@" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
-}
 
 # alias
 alias ls='ls --color=auto'
@@ -30,24 +22,11 @@ alias pvenv='python3 -m venv .venv && source .venv/bin/activate'
 alias docker_arch='sudo docker run -it --rm archlinux'
 alias spotify='spotify --ozone-platform=wayland  --ui.track_notifications_enabled=false & disown; exit'
 alias swi='swayimg'
+alias gittoken='echo $GITHUBTOKEN | wl-copy'
+alias hellman='$TERM -e --title "FloatingFoot" hellman'
+alias screenshots='swi -gr ~/Pictures/Screenshots/'
+alias wallpapers='swi -gr ~Pictures/wallpapers/'
 
-if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
-if [ -f /usr/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]; then
-  source /usr/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-  # Select all suggestion instead of top on result only
-  zstyle ':autocomplete:tab:*' insert-unambiguous yes
-  zstyle ':autocomplete:tab:*' widget-style menu-select
-  zstyle ':autocomplete:*' min-input 2
-  bindkey $key[Up] up-line-or-history
-  bindkey $key[Down] down-line-or-history
-fi
 
 # Save type history for completion and easier life
 HISTFILE=~/.zsh_history
@@ -74,6 +53,11 @@ function ranger {
 }
 
 eval "$(starship init zsh)"
-
 source ~/.cache/hellwal/variables.sh
 sh ~/.cache/hellwal/terminal.sh
+
+export PATH=$PATH:/home/pingu/.spicetify
+
+# bun completions
+[ -s "/home/pingu/.bun/_bun" ] && source "/home/pingu/.bun/_bun"
+

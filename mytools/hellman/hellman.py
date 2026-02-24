@@ -9,6 +9,7 @@ from textual.widgets import Header, Footer, Select
 themes_dir = Path(os.path.expanduser('~/.config/hellwal/themes/'))
 
 themes = [file.name for file in themes_dir.iterdir()]
+themes.sort()
 
 
 class Hellman(App):

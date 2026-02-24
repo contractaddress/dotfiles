@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+#script taken from BreadOnPenguins, it has been modified to work with wofi in hyprland
+
+case "$(printf "kill\nzzz\nreboot\nshutdown" | wofi -d -i)" in
+kill) ps -u "$USER" -o pid,comm,%cpu,%mem | wofi -d -i -p Kill: | awk '{print $1}' | xargs -r kill ;;
+zzz) slock systemctl suspend -i ;;
+reboot) systemctl reboot -i ;;
+shutdown) shutdown now ;;
+*) exit 1 ;;
+esac
