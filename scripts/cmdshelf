@@ -6,8 +6,7 @@ FOOTFLAGS=(
   --title FloatingFoot
 )
 
-#make sure to add the path if your list contains local binaries/scripts if executing via hyprland keybind
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:~/.local/bin:
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:~/.local/bin:~/.local/scripts:
 
 file="$HOME/.config/cmdshelf.list"
 [ -f "$file" ] || exit 1
@@ -15,7 +14,18 @@ file="$HOME/.config/cmdshelf.list"
 chosen=$(wofi --dmenu <"$file")
 [ -z "$chosen" ] && exit 0
 
-if [[ "$chosen" == *"swayimg"* ]]; then
+# List of keywords that should run directly in zsh
+direct_keywords=("swayimg" "template")
+
+run_direct=false
+for kw in "${direct_keywords[@]}"; do
+  if [[ "$chosen" == *"$kw"* ]]; then
+    run_direct=true
+    break
+  fi
+done
+
+if $run_direct; then
   zsh -c "$chosen"
 else
   setsid -f "$TERMINAL" "${FOOTFLAGS[@]}" zsh -l -c "$chosen; exec zsh"

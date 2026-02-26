@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#workspace template for cmdshelf
+
+exec firefox &
+sleep 0.2
+foot --working-directory ~/git/CA/
+sleep 0.3
+hyprctl dispatch movewindow l
