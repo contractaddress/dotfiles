@@ -1,6 +1,6 @@
 # DOTFILES
 
-welcome to my Arch Hyprland dotfiles + tools made by me  
+welcome to my Arch Hyprland dotfiles + tools and scripts made by me  
 
 ![themechanger](assets/themechanger.webp)
   
@@ -17,15 +17,13 @@ welcome to my Arch Hyprland dotfiles + tools made by me
 - **Image Gallery:** [swayimg](https://github.com/artemsen/swayimg)
 - **GTK:** [gruvbox-gtk-theme-git](https://aur.archlinux.org/packages/gruvbox-gtk-theme-git)
 
+## Scripts you might like
+
+check them out [here](scripts/)
+
+![scripts](assets/scripts.png)
+
 ## My Tools
-
-### Starchanger
-
-a Starship preset changer with a TUI
-
-**you can check it out [here](mytools/starchanger/)**
-
-![starchanger](assets/starchangrr.gif)  
 
 ### Hellman
 
@@ -34,6 +32,14 @@ a Hellwal theme picker with a TUI
 **you can check it out [here](mytools/hellman/)**
 
 ![hellman](assets/hellman.gif)
+
+### Starchanger
+
+a Starship preset changer with a TUI
+
+**you can check it out [here](mytools/starchanger/)**
+
+![starchanger](assets/starchangrr.gif)  
 
 ### KittyThemes
 

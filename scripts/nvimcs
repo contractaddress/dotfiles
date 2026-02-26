@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# little list of pesky nvim commands to have at my finger tips
+
 FILE="$HOME/notes/nvimcmdclippy.md"
 
 choice=$(cat "$FILE" | wofi -d -i -p "choose a cmd")
