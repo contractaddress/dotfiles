@@ -7,7 +7,7 @@ TERMINAL='foot'
 FOOTFLAGS=(
   -e
   --title FloatingFoot
-  -f JetBrainsMonoNerdFont-Regular:size=14
+  -f JetBrainsMonoNerdFont-Regular:size=12
 )
 
 newnote() {
@@ -24,7 +24,7 @@ selected() {
   )
   case $choice in
   New) newnote ;;
-  *.md) setsid -f "$TERMINAL" "${FOOTFLAGS[@]}" nvim "$folder$choice" >/dev/null 2>&1 ;;
+  *.md) setsid -f "$TERMINAL" "${FOOTFLAGS[@]}" nvim -c "setlocal nospell" "$folder$choice" >/dev/null 2>&1 ;;
   *) exit ;;
   esac
 }
