@@ -4,7 +4,7 @@ return {
 
   -- Mason for managing external tools
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     build = ":MasonUpdate", -- Upgrades Mason if necessary
     config = function()
       require("mason").setup()
@@ -12,8 +12,8 @@ return {
   },
   -- Mason LSP config integration
   {
-    "williamboman/mason-lspconfig.nvim",
-    dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
+    "mason-org/mason-lspconfig.nvim",
+    dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = { "pyright" }, -- Ensure pyright is installed
@@ -41,12 +41,12 @@ return {
     },
     config = function()
       local cmp = require("cmp")
-      
+
       local has_words_before = function()
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
         return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
       end
-      
+
       cmp.setup({
         snippet = {
           expand = function(args)

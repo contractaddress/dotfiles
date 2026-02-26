@@ -44,15 +44,15 @@ return {
       vim.keymap.set("n", "<F5>", toggle_transparent, { noremap = true, silent = false, desc = "Toggle transparency" })
 
       -- Uncomment the line below if you want to set Gruvbox as your default colorscheme
-      vim.cmd.colorscheme("gruvbox")
+      -- vim.cmd.colorscheme("gruvbox")
     end,
   },
 
   -- Uncomment the section below if you want to make Gruvbox your default colorscheme
-  -- {
-  --   "LazyVim/LazyVim",
-  --   opts = {
-  --     colorscheme = "gruvbox",
-  --   },
-  -- },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox",
+    },
+  },
 }

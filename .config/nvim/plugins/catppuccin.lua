@@ -10,7 +10,7 @@ return {
           light = "latte",
           dark = "mocha",
         },
-        transparent_background = false, -- disables setting the background color.
+        transparent_background = true, -- disables setting the background color.
         show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
         term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
         dim_inactive = {
@@ -53,8 +53,20 @@ return {
         },
       })
 
+      -- Function to toggle transparency in Catppuccin
+      local function toggle_catppuccin_transparency()
+        local catppuccin = require("catppuccin")
+        local current_config = require("catppuccin.config").options
+        current_config.transparent_background = not current_config.transparent_background
+        catppuccin.setup(current_config)
+        vim.cmd.colorscheme("catppuccin")
+      end
+
+      -- Set keymap to toggle transparency (using F8 to avoid conflicts)
+      vim.keymap.set("n", "<F8>", toggle_catppuccin_transparency, { desc = "Toggle Catppuccin transparency" })
+
       -- Ensure Catppuccin is the colorscheme
-      --vim.cmd.colorscheme("catppuccin")
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
 

@@ -7,7 +7,7 @@ return {
         -- Choose style: "storm", "moon", "night", "day"
         style = "moon",
         -- Enable transparent background
-        transparent = false,
+        transparent = true,
         -- Configure terminal colors
         terminal_colors = true,
         -- Styling options
@@ -30,8 +30,19 @@ return {
         on_highlights = function(highlights, colors) end,
       })
 
+      -- Function to toggle transparency
+      local function toggle_transparency()
+        local current_config = require("tokyonight.config").options
+        current_config.transparent = not current_config.transparent
+        require("tokyonight").setup(current_config)
+        vim.cmd.colorscheme("tokyonight")
+      end
+
+      -- Set F7 keymap to toggle transparency
+      vim.keymap.set("n", "<F7>", toggle_transparency, { desc = "Toggle Tokyo Night transparency" })
+
       -- Uncomment the line below if you want to set Tokyo Night as your default colorscheme
-      --  vim.cmd.colorscheme("tokyonight")
+      -- vim.cmd.colorscheme("tokyonight")
     end,
   },
 }

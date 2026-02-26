@@ -20,16 +20,6 @@ return {
       opts.completion = {
         completeopt = "menu,menuone,noinsert",
       }
-
-      -- Disable experimental features
-      opts.experimental = {
-        ghost_text = false,
-      }
-
-      -- Remove snippet-related configuration
-      opts.snippet = nil
-
-      return opts
     end,
   },
 }
