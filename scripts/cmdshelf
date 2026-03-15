@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+file="$HOME/.config/cmdshelf/cmdshelf.list"
+aliasfile=$HOME/.config/cmdshelf/aliases
 TERMINAL='/usr/bin/foot'
 FOOTFLAGS=(
   -e
@@ -8,14 +10,13 @@ FOOTFLAGS=(
 
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:~/.local/bin:~/.local/scripts:
 
-file="$HOME/.config/cmdshelf.list"
 [ -f "$file" ] || exit 1
 
 chosen=$(wofi --dmenu <"$file")
 [ -z "$chosen" ] && exit 0
 
-# List of keywords that should run directly in zsh
-direct_keywords=("swayimg" "template")
+# List of keywords that should run directly in zsh instead of spawning a shell
+direct_keywords=("swayimg" "template" "sys" "favorites" "screenshots" "wallpapers")
 
 run_direct=false
 for kw in "${direct_keywords[@]}"; do
@@ -26,7 +27,7 @@ for kw in "${direct_keywords[@]}"; do
 done
 
 if $run_direct; then
-  zsh -c "$chosen"
+  zsh -c "source $aliasfile; eval $chosen"
 else
   setsid -f "$TERMINAL" "${FOOTFLAGS[@]}" zsh -l -c "$chosen; exec zsh"
 fi
