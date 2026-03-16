@@ -1,6 +1,10 @@
-swayimg -gr ~/Pictures/Screenshots/
-swayimg -gr ~/Pictures/wallpapers/
+den
+screenshots
+wallpapers
+favorites
+nwg-look
 hellman
+starchanger
 cd ~/codebase/
 cd ~/git/CA/
 template1

@@ -1,5 +1,6 @@
 alias swi='swayimg'
-alias screenshots='swi -gr ~/Pictures/Screenshots/'
+alias screenshots='swi -gr --order=mtime ~/Pictures/Screenshots/'
 alias wallpapers='swi -gr ~/Pictures/Wallpapers/'
 alias favorites='swi -gr ~/Pictures/Favorites/'
-
+alias brave=brave
+alias den='brave --new-window --password-store=basic "https://den.homelab.lan"'
