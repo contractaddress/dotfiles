@@ -12,7 +12,7 @@ export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:~/.local/bin:~/.local/scripts:
 
 [ -f "$file" ] || exit 1
 
-chosen=$(wofi --dmenu <"$file")
+chosen=$(wofi --width=500 --dmenu <"$file")
 [ -z "$chosen" ] && exit 0
 
 # List of keywords that should run directly in zsh instead of spawning a shell

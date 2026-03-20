@@ -31,9 +31,10 @@ alias swi='swayimg'
 alias gittoken='echo $GITHUBTOKEN | wl-copy'
 alias hellman='$TERM -e --title "FloatingFoot" hellman'
 alias screenshots='swi -gr ~/Pictures/Screenshots/'
-alias wallpapers='swi -gr ~Pictures/wallpapers/'
+alias wallpapers='swi -gr ~Pictures/Wallpapers/'
 alias favorites='swi -gr ~/Pictures/Favorites/'
 alias bb="bun run build && bun run preview"
+alias brave="brave --password-store=basic & disown"
 
 
 # Set the directory we want to store zinit and plugins
@@ -91,9 +92,10 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 eval "$(fzf --zsh)"
 #eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
+#source ~/.cache/hellwal/variables.sh
+#sh ~/.cache/hellwal/terminal.sh
 
-source ~/.cache/hellwal/variables.sh
-sh ~/.cache/hellwal/terminal.sh
+[ -f ~/.cache/wal/sequences ] && cat ~/.cache/wal/sequences
 
 # bun completions
 [ -s "/home/pingu/.bun/_bun" ] && source "/home/pingu/.bun/_bun"
