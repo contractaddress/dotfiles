@@ -16,7 +16,7 @@ chosen=$(wofi --width=500 --dmenu <"$file")
 [ -z "$chosen" ] && exit 0
 
 # List of keywords that should run directly in zsh instead of spawning a shell
-direct_keywords=("swayimg" "template" "sys" "favorites" "screenshots" "wallpapers" "den" "nwg-look")
+direct_keywords=("swayimg" "template" "sys" "favorites" "screenshots" "wallpapers" "den" "nwg-look" "nextcloud" "linkwarden")
 
 run_direct=false
 for kw in "${direct_keywords[@]}"; do

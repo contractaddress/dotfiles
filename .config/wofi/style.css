@@ -15,6 +15,9 @@
 }
 
 #window {
+    fixed-height: false;
+    dynamic: true;
+    lines: 10;
     margin: 0px;
     background-color: alpha(@dark-background,1.0);
     color:@dark-background;

@@ -1,0 +1,30 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin": "0",
+    "spacing": 0,
+    "height": 26,
+
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+
+    "modules-right": ["memory","clock"],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+
+    "clock": {
+        "format": "{:%H:%M} ",
+        "tooltip-format": "{:%A, %B %d}"
+    },
+
+    "memory": {
+        "format": "{used:0.1f}G {icon}",
+        "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+        "interval": 5
+    }
+}

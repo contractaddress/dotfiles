@@ -1,6 +1,8 @@
 alias swi='swayimg'
-alias screenshots='swi -gr --order=mtime ~/Pictures/Screenshots/'
-alias wallpapers='swi -gr ~/Pictures/Wallpapers/'
-alias favorites='swi -gr ~/Pictures/Favorites/'
+alias screenshots='swi -g ~/Pictures/Screenshots/*'
+alias wallpapers='swi -g ~/Pictures/Wallpapers/*'
+alias favorites='swi -g ~/Pictures/Favorites/*'
 alias brave=brave
-alias den='brave --new-window --password-store=basic "https://den.homelab.lan"'
+alias den='helium-browser --new-window --password-store=basic "https://den.homelab.lan"'
+alias nextcloud='helium-browser --new-window --password-store=basic "https://nextcloud.homelab.lan"'
+alias linkwarden='helium-browser --new-window --password-store=basic "https://linkwarden.homelab.lan"'
