@@ -2,7 +2,6 @@
 
 welcome to my Arch Hyprland dotfiles + tools and scripts made by me  
 
-![themechanger](assets/themechanger.webp)
   
 ### specs
 
