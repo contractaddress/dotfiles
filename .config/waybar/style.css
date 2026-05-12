@@ -44,7 +44,41 @@ window#waybar {
     color: #ff5555;
 }
 
+#keyboard-state,
+#pulseaudio,
+#mpd,
 #memory,
+#cpu,
 #clock {
-    margin-right: 25px;
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.12) 0%,
+            rgba(255, 100, 200, 0.05) 25%,
+            rgba(100, 200, 255, 0.05) 50%,
+            rgba(166, 224, 60, 0.05) 75%,
+            rgba(255, 255, 255, 0.04) 100%),
+        rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    padding: 2px 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+#clock {
+    margin-right: 10px;
+}
+
+#cpu.warning {
+    color: #e5a445;
+}
+
+#cpu.critical {
+    color: #e55353;
 }

@@ -1,7 +1,6 @@
 ## Geometry
 mode=drun
-width=550px
-height=590px
+width=300px
 dynamic_lines=true
 location=left  # Changed from 'left' to 'bottom' for south position
 orientation=vertical
@@ -12,3 +11,4 @@ allow_images=true
 image_size=30
 
 # Other
+

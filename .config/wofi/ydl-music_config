@@ -1,0 +1,7 @@
+iniwidth=600
+height=50
+location=center
+prompt=YouTube URL:
+hide_search=false
+insensitive=true
+lines=1
