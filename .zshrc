@@ -32,6 +32,7 @@ alias favorites='swi -gr ~/Pictures/Favorites/'
 alias bb="bun run build && bun run preview"
 alias brave="brave --password-store=basic & disown"
 alias devbox='TERM=xterm-256color && ssh devbox'
+alias ydlmusic='noglob yt-dlp -x --audio-format mp3 --embed-thumbnail --add-metadata -o "~/Music/playlistuh/%(title)s.%(ext)s"'
 
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -93,8 +94,6 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 #zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Aliases
-alias ls='ls --color'
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -103,11 +102,12 @@ eval "$(starship init zsh)"
 source ~/.cache/hellwal/variables.sh
 sh ~/.cache/hellwal/terminal.sh
 
+#pywal cache
 #[ -f ~/.cache/wal/sequences ] && cat ~/.cache/wal/sequences
 
 # bun completions
-#[ -s "/home/username/.bun/_bun" ] && source "/home/username/.bun/_bun"
+[ -s "/home/username/.bun/_bun" ] && source "/home/username/.bun/_bun"
 
 # opencode
-# export PATH=/home/username/.opencode/bin:$PATH
+export PATH=/home/username/.opencode/bin:$PATH
 
