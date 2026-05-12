@@ -8,12 +8,14 @@ export OLLAMA_API_BASE=bleh
 export CONTEXT7_API=bleh
 export FIRECRAWL_API_KEY=bleh
 export ZEN_API=bleh
-
+export DEEPSEEK_API=bleh
 
 export GITHUBTOKEN=forgor
 export DISCWEBHK=forkepri
 export TGtoken=forkepri
 export ChatID=forkepri
+
+export CSFLOAT_API_KEY=
 
 # alias
 alias ls='ls --color=auto'
