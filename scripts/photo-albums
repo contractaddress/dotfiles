@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DIR="$HOME/Pictures"
+
+chosen=$(find "$DIR" -mindepth 1 -maxdepth 1 -type d \
+    | xargs -I{} basename "{}" \
+    | wofi --dmenu --prompt "Select folder" -c ~/.config/wofi/photo-album-conf)
+
+[ -z "$chosen" ] && exit 0
+
+full_path="$DIR/$chosen"
+
+swayimg -g "$full_path"

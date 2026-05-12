@@ -1,0 +1,6 @@
+#!/bin/bash
+URL=$(wofi --dmenu --prompt "YouTube URL:" -c ~/.config/wofi/ydl-music_config)
+URL="${URL%%&list*}"
+yt-dlp -x --audio-format mp3 --embed-thumbnail --add-metadata -o "~/Music/playlistuh/%(title)s.%(ext)s" "$URL"
+echo "############################################"
+echo "ALL DONE: PRESS CTRL SHIFT F12 to refresh the mpc queue"

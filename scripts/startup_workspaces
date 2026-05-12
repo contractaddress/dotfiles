@@ -1,0 +1,7 @@
+#!/bin/bash
+sleep 2
+hyprctl dispatch exec [workspace 1 silent] $HOME/.local/bin/zen >> /tmp/startup_debug.log 2>&1
+sleep 5
+mullvad-vpn
+sleep 7
+$HOME/.local/bin/nextcloud-client & disown

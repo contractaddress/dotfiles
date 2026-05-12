@@ -5,10 +5,9 @@ aliasfile=$HOME/.config/cmdshelf/aliases
 TERMINAL='/usr/bin/foot'
 FOOTFLAGS=(
   -e
-  --title FloatingFoot
 )
 
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:~/.local/bin:~/.local/scripts:
+export PATH=$PATH:~/.local/bin:~/.local/scripts:
 
 [ -f "$file" ] || exit 1
 
@@ -16,7 +15,7 @@ chosen=$(wofi --width=500 --dmenu <"$file")
 [ -z "$chosen" ] && exit 0
 
 # List of keywords that should run directly in zsh instead of spawning a shell
-direct_keywords=("swayimg" "template" "sys" "favorites" "screenshots" "wallpapers" "den" "nwg-look" "nextcloud" "linkwarden")
+direct_keywords=("swayimg" "template" "sys" "favorites" "screenshots" "wallpapers" "den" "nwg-look" "nextcloud" "linkwarden" "tools" "ledger-live" "pinterest")
 
 run_direct=false
 for kw in "${direct_keywords[@]}"; do
@@ -26,8 +25,16 @@ for kw in "${direct_keywords[@]}"; do
   fi
 done
 
+############### add different titles (so can make window rules in your hyprland.conf depending on chosen ###############
+case "$chosen" in
+  *download-music*)         title="music-cmdshelf" ;;
+  *btop*|*sys*|*htop*)      title="FloatingFoot-sys" ;;
+  *)                        title="FloatingFoot" ;;
+esac
+#################################################################
+
 if $run_direct; then
   zsh -c "source $aliasfile; eval $chosen"
 else
-  setsid -f "$TERMINAL" "${FOOTFLAGS[@]}" zsh -l -c "$chosen; exec zsh"
+  setsid -f "$TERMINAL" --title="$title" "${FOOTFLAGS[@]}" zsh -i -c "source $aliasfile; eval $chosen; exec zsh"
 fi
