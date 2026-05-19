@@ -48,7 +48,8 @@
 
 #entry {
     margin: 5px 5px;
-    font-size: 20px;
+    font-size: 46px;
+    font-family: 'GohuFont Nerd Font';
 }
 
 #entry:selected {
@@ -65,4 +66,5 @@
 
 #entry image {
     padding-right: 10px;
+    margin-right: 25px;
 }

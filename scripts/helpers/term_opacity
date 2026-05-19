@@ -1,0 +1,26 @@
+#!/bin/bash
+
+opaque() {
+    sed -i 's/^background_opacity.*/background_opacity 1.0/' \
+        ~/.config/kitty/kitty.conf
+
+    sed -i 's/^alpha=.*/alpha=1.0/' \
+        ~/.config/foot/foot.ini
+}
+
+transparent() {
+    sed -i 's/^background_opacity.*/background_opacity 0.65/' \
+        ~/.config/kitty/kitty.conf
+
+    sed -i 's/^alpha=.*/alpha=0.65/' \
+        ~/.config/foot/foot.ini
+}
+
+case "$1" in
+    opaque) opaque ;;
+    transparent) transparent ;;
+    *)
+        echo "Usage: $0 {opaque|transparent}"
+        exit 1
+        ;;
+esac

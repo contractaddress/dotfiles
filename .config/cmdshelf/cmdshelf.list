@@ -1,8 +1,11 @@
 tools
 linkwarden
 nextcloud
+verayubi create
+verayubi mount
+verayubi unmount
+verayubi list
 den
-verayubi
 rmpc
 download-music
 screenshots
