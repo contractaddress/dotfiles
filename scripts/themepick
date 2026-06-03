@@ -15,7 +15,7 @@ THEMES="
 BEARS|$PREVIEW_DIR/gruvbox-material.png|$WALLPAPER_DIR/bears.png|gruvbox-material|transparent|2 6
 SEA|$PREVIEW_DIR/countrysideguitar.png|$WALLPAPER_DIR/countryrockstar.jpg|catppuccin|transparent|2 6
 ROSEYDUCKS|$PREVIEW_DIR/roseducks.png|$WALLPAPER_DIR/roseyducks.jpg|roseducks|transparent|2 2
-TOKYO|$PREVIEW_DIR/tokyo.png|$WALLPAPER_DIR/tokyo.jpg|monokai|transparent|2 6
+TOKYO|$PREVIEW_DIR/tokyo.png|$WALLPAPER_DIR/tokyo.jpg|gruvbox-material|transparent|2 6
 DIGI|$PREVIEW_DIR/digi3d.png|$WALLPAPER_DIR/digi3d.jpg|neon-star|transparent|2 6
 BLACK|$PREVIEW_DIR/dark-gruv.png|$WALLPAPER_DIR/darkBG.png|dark-gruv|transparent|3 11
 "
