@@ -1,0 +1,7 @@
+#!/bin/bash
+source $HOME/.cache/wal/colors.sh
+
+color_var1="color$1"
+color_var2="color$2"
+
+hyprctl eval "hl.config({ general = { col = { active_border = { colors = {\"rgba(${!color_var1:1}ff)\", \"rgba(${!color_var2:1}ff)\"}, angle = 90 } } } })"

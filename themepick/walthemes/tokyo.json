@@ -1,0 +1,29 @@
+{
+    "wallpaper": "/home/pingu/Pictures/Wallpapers/tree.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0c0f0e",
+        "foreground": "#e4e8eb",
+        "cursor": "#e4e8eb"
+    },
+    "colors": {
+        "color0": "#0c0f0e",
+        "color1": "#9ec044",
+        "color2": "#acc85c",
+        "color3": "#40bfb2",
+        "color4": "#99ddc6",
+        "color5": "#bedae9",
+        "color6": "#c9daed",
+        "color7": "#e4e8eb",
+        "color8": "#9fa2a4",
+        "color9": "#9ec044",
+        "color10": "#acc85c",
+        "color11": "#40bfb2",
+        "color12": "#99ddc6",
+        "color13": "#bedae9",
+        "color14": "#c9daed",
+        "color15": "#e4e8eb"
+    }
+}
+

@@ -1,0 +1,65 @@
+#!/bin/bash
+# helpers
+TERM_OPACITY="$HOME/.local/scripts/helpers/term_opacity"
+REFRESH_BORDER="$HOME/.local/scripts/helpers/refresh_windowborder"
+PREVIEW_DIR="$HOME/.local/share/themepick/previews"
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+AWWW_FLAGS="--transition-type wipe --transition-duration 1"
+
+# FORMAT: name|preview_image|wallpaper|wal_theme|opacity_mode|bordercolor1 bordercolor2
+THEMES="
+BEARS|$PREVIEW_DIR/gruvbox-material.png|$WALLPAPER_DIR/bears.png|gruvbox-material|transparent|2 6
+TOKYO|$PREVIEW_DIR/tokyo.png|$WALLPAPER_DIR/tokyo.jpg|tokyo|transparent|2 6
+BLACK|$PREVIEW_DIR/dark-gruv.png|$WALLPAPER_DIR/darkBG.png|dark-gruv|transparent|3 11
+"
+
+if [[ -n "$KITTY_WINDOW_ID" ]]; then
+    FZF_INPUT=$(echo "$THEMES" | while IFS='|' read -r name preview _; do
+        [ -z "$name" ] && continue
+        echo -e "$name\t$preview"
+    done)
+
+    CHOICE=$(echo "$FZF_INPUT" | fzf \
+        --with-nth=1 \
+        --delimiter=$'\t' \
+        --preview='kitty icat --clear --transfer-mode=memory --stdin=no \
+            --place=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}@0x0 {2}' \
+        --preview-window='left:70%:wrap' \
+        --prompt='  choose theme > ' \
+        --layout=reverse \
+        --height=100% \
+        --padding='0,1' \
+        --info=hidden \
+        | cut -f1
+    )
+else
+    WOFI_INPUT=$(echo "$THEMES" | while IFS='|' read -r name preview _; do
+        [ -z "$name" ] && continue
+        echo "img:$preview:text:$name"
+    done)
+
+    CHOICE=$(echo "$WOFI_INPUT" | wofi \
+        -I \
+        --dmenu \
+        --cache-file=/dev/null \
+        -Dimage_size=300 \
+        -p 'choose theme' \
+        -W 800 \
+        --conf "$HOME/.config/wofi/themepicker/thempick.conf" \
+        --style "$HOME/.config/wofi/themepicker/themepicker.css"
+    )
+    CHOICE=$(echo "$CHOICE" | sed 's|img:[^:]*:text:||')
+fi
+
+[ -z "$CHOICE" ] && exit 0
+
+# Apply selected theme
+echo "$THEMES" | while IFS='|' read -r name preview wallpaper wal_theme opacity border; do
+    [ "$name" != "$CHOICE" ] && continue
+    awww img "$wallpaper" $AWWW_FLAGS
+    wal --theme "$wal_theme"
+    "$TERM_OPACITY" "$opacity"
+    set -- $border
+    "$REFRESH_BORDER" "$1" "$2"
+    break
+done
